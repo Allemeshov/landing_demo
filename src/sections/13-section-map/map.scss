@@ -1,0 +1,36 @@
+@import "@shared/fonts.scss";
+
+.map {
+  width: 100vw;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("@assets/img/map.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+
+  .pin {
+    width: 19px;
+    height: 26px;
+    background-image: url("@assets/icons/PIN-icon.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 18px;
+  }
+  .title {
+    margin: 0;
+    @include Montserrat-font(700);
+    font-size: 24pt;
+    color: #f38181;
+    text-transform: uppercase;
+  }
+  .hor-line {
+    margin-top: 22px;
+    width: 60px;
+    border-bottom: 3px solid #f38181;
+  }
+}

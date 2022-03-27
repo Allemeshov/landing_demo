@@ -1,0 +1,102 @@
+@import "@shared/fonts.scss";
+@import "@shared/vars.scss";
+@import "@mixins/web-part.scss";
+@import "@shared/_include-media.scss";
+
+.swiper-container {
+  width: 100vw;
+  // height: 289px;
+  background-color: #f8f8f8;
+
+  @include media(">=desktop") {
+    padding: 0 19%;
+    box-sizing: border-box;
+  }
+  margin-top: 80px;
+
+  .swiper {
+    // height: 289px;
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      color: #ccc;
+      font-size: 13pt;
+    }
+
+    .swiper-slide {
+      box-sizing: border-box;
+      padding: 68px 70px;
+
+      display: flex;
+      // flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      @include media(">425px") {
+        .icon {
+          margin-right: 60px;
+          margin-left: 30px;
+        }
+      }
+
+      @include media("<=425px") {
+        flex-direction: column;
+
+        .icon {
+          margin: 0 !important;
+        }
+      }
+
+      .icon {
+        box-sizing: border-box;
+        width: 150px;
+        height: 150px;
+        border: 3px solid #95e1d3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .inner {
+          max-width: 50%;
+          padding: 10%;
+          content: url("@assets/icons/SPEECH-icon.svg");
+        }
+      }
+      .text-container {
+        flex: 1;
+        flex-grow: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        .text {
+          width: 100%;
+          font-family: "Roboto", sans-serif;
+          font-style: italic;
+          margin-bottom: 25px;
+          @include media(">=550px") {
+            font-size: 19pt;
+          }
+          @include media("<550px") {
+            font-size: 12pt;
+          }
+          color: #999;
+          white-space: normal;
+          word-wrap: break-word;
+          display: block;
+        }
+        .hor-line {
+          width: 60px;
+          border-bottom: 3px solid #f38181;
+          margin-right: 9px;
+        }
+        .author {
+          display: inline;
+          @include Kaushan-font;
+          font-size: 17pt;
+        }
+      }
+    }
+  }
+}

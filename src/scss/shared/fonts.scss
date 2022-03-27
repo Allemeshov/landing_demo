@@ -1,0 +1,20 @@
+@mixin Kaushan-font($weight: null) {
+  font-family: "Kaushan Script", cursive;
+
+  @if ($weight) {
+    font-weight: $weight;
+  } @else {
+    font-weight: 400;
+  }
+}
+
+@mixin Montserrat-font($weight: null) {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+
+  @if ($weight) {
+    font-weight: $weight;
+  } @else {
+    font-weight: 400;
+  }
+}

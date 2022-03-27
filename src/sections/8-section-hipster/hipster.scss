@@ -1,0 +1,61 @@
+.hipster {
+  height: 250px;
+  width: 100vw;
+  background-color: #f8f8f8;
+
+  box-sizing: border-box;
+
+  @include media(">=desktop") {
+    padding: 0 19%;
+    .hipster-slider {
+      display: none;
+    }
+  }
+
+  @include media("<desktop") {
+    padding: 0 5%;
+    .pic {
+      display: none;
+    }
+    .hipster-slider {
+      display: block;
+    }
+  }
+
+  .pic {
+    height: 100%;
+    max-width: 100%;
+    background-image: url("@assets/img/hipster.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .hipster-slider {
+    width: 100%;
+    height: 100%;
+
+    .swiper-slide {
+      box-sizing: border-box;
+      padding: 0 50px;
+      .hipster-wrapper {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          max-width: 100% !important;
+          height: auto !important;
+        }
+      }
+    }
+
+    .hipster-swiper-button-prev::after,
+    .hipster-swiper-button-next::after {
+      color: #ccc;
+    }
+  }
+}

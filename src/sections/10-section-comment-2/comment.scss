@@ -1,0 +1,173 @@
+@import "@shared/fonts.scss";
+@import "@shared/vars.scss";
+@import "@mixins/web-part.scss";
+@import "@shared/_include-media.scss";
+
+.comment-container {
+  width: 100vw;
+  // height: 289px;
+  // padding: 0 19%;
+  box-sizing: border-box;
+
+  @include media("<=phone") {
+    padding: 0;
+  }
+
+  @include media(">tablet", "<=desktop") {
+    padding: 0 5%;
+  }
+
+  @include media(">desktop") {
+    padding: 0 19%;
+  }
+
+  .swiper-comment {
+    height: 289px;
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      color: #ccc;
+      font-size: 13pt;
+    }
+
+    .swiper-slide {
+      box-sizing: border-box;
+      padding: 10px 50px 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include media(">425px") {
+        .icon {
+          // margin-right: 60px;
+        }
+      }
+
+      @include media("<=425px") {
+        flex-direction: column;
+        height: 100%;
+
+        .icon {
+          padding: 0 !important;
+          .inner {
+            width: 100px;
+            height: 100px;
+          }
+        }
+        .text {
+          text-align: center;
+        }
+      }
+
+      .icon {
+        box-sizing: border-box;
+        padding: 10%;
+
+        .inner {
+          max-width: 100%;
+          height: auto;
+
+          content: url("@assets/img/comment-avatar.png");
+        }
+      }
+      .text-container {
+        flex: 1;
+        flex-grow: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        min-width: 50%;
+
+        .text {
+          width: 100%;
+          font-family: "Roboto", sans-serif;
+          font-style: italic;
+          @include media(">=550px") {
+            font-size: 15pt;
+          }
+          @include media("<550px") {
+            font-size: 12pt;
+          }
+          color: #333;
+          white-space: normal;
+          word-wrap: break-word;
+          display: block;
+        }
+        .hor-line {
+          width: 60px;
+          border-bottom: 3px solid #f38181;
+          margin-right: 9px;
+        }
+        .author {
+          display: inline;
+          @include Kaushan-font;
+          font-size: 15pt;
+        }
+      }
+    }
+
+    // .swiper-slide {
+    //   box-sizing: border-box;
+    //   padding: 0 75px;
+
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+
+    //   @include media(">425px") {
+    //     .icon {
+    //       margin-right: 25px;
+    //     }
+    //   }
+
+    //   @include media("<=425px") {
+    //     flex-direction: column;
+
+    //     .icon {
+    //       margin: 0 !important;
+    //     }
+    //   }
+
+    //   .icon {
+    //     width: 210px;
+    //     height: 210px;
+    //     box-sizing: border-box;
+    //     background-image: url("@assets/img/comment-avatar.png");
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    //     background-position: center;
+    //     // margin-right: 25px;
+    //   }
+    //   .text-container {
+    //     flex: 1;
+    //     flex-grow: 1;
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     align-items: center;
+
+    //     .text {
+    //       width: 100%;
+    //       font-family: "Roboto", sans-serif;
+    //       font-style: italic;
+    //       font-size: 15pt;
+    //       color: #333;
+    //       white-space: normal;
+    //       word-wrap: break-word;
+    //       display: block;
+    //     }
+    //     .hor-line {
+    //       width: 60px;
+    //       border-bottom: 3px solid #f38181;
+    //       margin-right: 9px;
+    //     }
+    //     .author {
+    //       display: inline;
+    //       @include Kaushan-font;
+    //       font-size: 15pt;
+    //     }
+    //   }
+    // }
+  }
+}

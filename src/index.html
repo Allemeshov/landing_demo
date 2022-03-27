@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pena Landing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script
+      src="https://kit.fontawesome.com/d711c7d573.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="picture-reader" onclick="closePictureReader(event)">
+      <div class="reading-picture-wrapper">
+        <img class="reading-picture" />
+      </div>
+    </div>
+
+    @@include('./sections/1-section-banner/banner.html')
+    @@include('./sections/2-section-about-us/about-us.html')
+    @@include('./sections/3-section-services/services.html')
+    @@include('./sections/4-section-design/design.html')
+    @@include('./sections/5-section-doings/doings.html')
+    @@include('./sections/6-section-comment-1/slider.html')
+    @@include('./sections/7-section-team/team.html')
+    @@include('./sections/8-section-hipster/hipster.html')
+    @@include('./sections/9-section-works/works.html')
+    @@include('./sections/10-section-comment-2/comment.html')
+    @@include('./sections/11-section-people/people.html')
+    @@include('./sections/12-section-blog/blog.html')
+    @@include('./sections/13-section-map/map.html')
+    @@include('./sections/14-section-footer/footer.html')
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js"></script>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

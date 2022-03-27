@@ -1,0 +1,232 @@
+@import "@shared/fonts.scss";
+@import "@shared/vars.scss";
+@import "@shared/_include-media.scss";
+@import "@mixins/web-part.scss";
+
+@mixin service {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding-bottom: 55px;
+  margin-bottom: 55px;
+  border-bottom: 1px solid #999;
+
+  &:last-child {
+    border: 0;
+    // padding-bottom: 0;
+  }
+
+  .icon {
+    height: 100%;
+    min-width: 36px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: top;
+    margin: 0 28px;
+  }
+  .photography {
+    background-image: url("@assets/icons/ALARM-icon.svg");
+  }
+  .web-design {
+    background-image: url("@assets/icons/LINE GRAPH-icon.svg");
+  }
+  .creativity {
+    background-image: url("@assets/icons/COMPUTER _ OK-icon.svg");
+  }
+  .seo {
+    background-image: url("@assets/icons/BOOK_2-icon.svg");
+  }
+  .css-html {
+    background-image: url("@assets/icons/HOME-icon.svg");
+  }
+  .digital {
+    background-image: url("@assets/icons/DIGITAL-icon.svg");
+  }
+
+  .info {
+    // height: 100%;
+    // margin-right: 70px;
+
+    p {
+      margin: 0;
+      @include Montserrat-font(400);
+    }
+
+    .title {
+      text-transform: uppercase;
+      font-size: 9pt;
+      color: #333333;
+      margin-bottom: 10px;
+    }
+    .desc {
+      font-size: 10pt;
+      color: #999;
+    }
+  }
+}
+
+.services {
+  @include Web-part;
+  // padding: 0 358px !important;
+  padding: 0 !important;
+
+  header {
+    margin-top: 90px;
+    text-align: center;
+    h2 {
+      @include Kaushan-font;
+      font-size: $italic-size;
+      color: #111;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+    h1 {
+      @include Montserrat-font(700);
+      font-size: $upper-size;
+      text-transform: uppercase;
+      color: #111;
+    }
+    margin-bottom: 40px;
+  }
+
+  .hor-line-wrapper {
+    display: flex;
+    justify-content: center;
+    .hor-line {
+      width: 60px;
+      border-bottom: 3px solid #f38181;
+    }
+    margin-bottom: 45px;
+  }
+
+  .services-list {
+    width: 100%;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    row-gap: 1px;
+    box-sizing: border-box;
+
+    @include media(">=phone", "<tablet") {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+    @include media(">=tablet", "<desktop") {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      .service {
+        &:nth-child(5) {
+          border: none;
+        }
+      }
+    }
+    @include media(">=desktop") {
+      padding: 0 19%;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr;
+      .service {
+        &:nth-child(4),
+        &:nth-child(5) {
+          border: none;
+        }
+      }
+    }
+
+    .service {
+      background-color: #fff;
+      @include service();
+    }
+
+    .row {
+      width: 100%;
+      &:first-child {
+        border-bottom: 1px solid #999999;
+        margin-bottom: 48px;
+      }
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .service {
+        @include service();
+      }
+    }
+  }
+
+  // .services-list {
+  //   .row {
+  //     width: 100%;
+  //     &:first-child {
+  //       border-bottom: 1px solid #999999;
+  //       margin-bottom: 48px;
+  //     }
+
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+
+  //     .service {
+  //       display: flex;
+  //       justify-content: flex-start;
+  //       align-items: center;
+
+  //       width: 400px;
+  //       height: 123px;
+
+  //       .icon {
+  //         height: 100%;
+  //         min-width: 36px;
+  //         //   background-image: url("@assets/icons/ALARM-icon.svg");
+  //         background-repeat: no-repeat;
+  //         background-size: contain;
+  //         background-position-y: top;
+  //         margin-right: 28px;
+  //       }
+  //       .photography {
+  //         background-image: url("@assets/icons/ALARM-icon.svg");
+  //       }
+  //       .web-design {
+  //         background-image: url("@assets/icons/LINE GRAPH-icon.svg");
+  //       }
+  //       .creativity {
+  //         background-image: url("@assets/icons/COMPUTER _ OK-icon.svg");
+  //       }
+  //       .seo {
+  //         background-image: url("@assets/icons/BOOK_2-icon.svg");
+  //       }
+  //       .css-html {
+  //         background-image: url("@assets/icons/HOME-icon.svg");
+  //       }
+  //       .digital {
+  //         background-image: url("@assets/icons/DIGITAL-icon.svg");
+  //       }
+
+  //       .info {
+  //         height: 100%;
+  //         margin-right: 70px;
+
+  //         p {
+  //           margin: 0;
+  //           @include Montserrat-font(400);
+  //         }
+
+  //         .title {
+  //           text-transform: uppercase;
+  //           font-size: 11pt;
+  //           color: #333333;
+  //           margin-bottom: 10px;
+  //         }
+  //         .desc {
+  //           font-size: 12pt;
+  //           color: #999;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+}

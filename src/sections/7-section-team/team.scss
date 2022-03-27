@@ -1,0 +1,247 @@
+@import "@shared/fonts.scss";
+@import "@shared/vars.scss";
+@import "@mixins/web-part.scss";
+@import "@shared/_include-media.scss";
+
+.team {
+  @include Web-part;
+  padding: 0 !important;
+  header {
+    margin-top: 90px;
+    text-align: center;
+    h2 {
+      @include Kaushan-font;
+      font-size: 20pt;
+      color: #111;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+    h1 {
+      @include Montserrat-font(700);
+      font-size: 30pt;
+      text-transform: uppercase;
+      color: #111;
+    }
+    margin-bottom: 40px;
+  }
+
+  .hor-line-wrapper {
+    display: flex;
+    justify-content: center;
+    .hor-line {
+      width: 60px;
+      border-bottom: 3px solid #f38181;
+    }
+    margin-bottom: 45px;
+  }
+
+  .info {
+    margin: 0 19%;
+    p {
+      color: #999999;
+      font-family: Roboto, sans;
+      max-width: 940px;
+      word-wrap: break-word;
+      text-align: center;
+    }
+    margin-bottom: 104px;
+  }
+
+  .profiles {
+    box-sizing: border-box;
+    padding: 0 5%;
+    width: 100%;
+    display: grid;
+    // column-gap: 30px;
+    // row-gap: 30px;
+
+    gap: 30px;
+
+    @include media("<=425px") {
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    @include media(">425px", "<desktop") {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 1fr 1fr;
+
+      .profile {
+        &:nth-child(1) {
+          grid-column-start: 1;
+          grid-column-end: 4;
+          grid-row-start: 1;
+          grid-row-end: 2;
+        }
+        &:nth-child(2) {
+          grid-column-start: 4;
+          grid-column-end: 7;
+          grid-row-start: 1;
+          grid-row-end: 2;
+        }
+        &:nth-child(3) {
+          grid-column-start: 2;
+          grid-column-end: 6;
+          grid-row-start: 3;
+          grid-row-end: 2;
+        }
+      }
+    }
+
+    @include media(">=desktop") {
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 0 19% !important;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .profile-pic {
+        // Does not move.
+        $width: 380px;
+        $height: 470px;
+
+        @include media(">=desktop") {
+          max-width: 380px;
+          min-height: 470px;
+        }
+
+        width: 100%;
+        height: $height;
+        cursor: pointer;
+        background-color: #95e1d3;
+        position: relative;
+
+        .inner {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 10;
+          transition: 0.5s;
+
+          .icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16pt;
+            color: #f38181;
+            background-color: #fce38a;
+
+            &:hover {
+              color: #fff;
+              background-color: #f38181;
+            }
+          }
+
+          p {
+            @include Montserrat-font(400);
+            text-transform: uppercase;
+            font-size: 18pt;
+            color: white;
+          }
+        }
+
+        &::before {
+          // Moves with bg-image.
+
+          content: "";
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          // Bg-image is set lower due to the #id
+          background-repeat: no-repeat;
+          background-size: cover;
+          transition: 0.5s;
+        }
+
+        &::after {
+          // Moves with gradiend
+
+          width: 100%;
+          height: 100%;
+
+          content: "";
+          color: white;
+
+          position: absolute;
+          display: block;
+          z-index: 5;
+          transition: 0.5s;
+        }
+        &:hover::after {
+          background: linear-gradient(
+            to top,
+            rgba($color: #fce38a, $alpha: 0.9),
+            rgba($color: #f38181, $alpha: 0.9)
+          );
+        }
+        &:hover::after > .inner {
+          opacity: 1;
+        }
+        &:hover::after,
+        &:hover::before {
+          transform: translate(-20px, -20px);
+        }
+        &:hover > .inner {
+          opacity: 1 !important;
+          transform: translate(-20px, -20px);
+        }
+      }
+
+      #guy-1 {
+        &::before {
+          background-image: url("@assets/img/guy-1.png");
+        }
+      }
+      #guy-2 {
+        &::before {
+          background-image: url("@assets/img/guy-2.png");
+          background-position: center;
+        }
+      }
+      #guy-3 {
+        &::before {
+          background-position: center;
+          background-image: url("@assets/img/guy-3.png");
+        }
+      }
+
+      .name-wrapper {
+        // width: 380px;
+        margin-top: 15px !important;
+        width: 100%;
+        box-sizing: border-box;
+        &:last-child {
+          margin: 0;
+        }
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        .name {
+          @include Montserrat-font(400);
+          font-size: 14pt;
+          color: #333;
+        }
+        .position {
+          font-family: "Roboto", sans-serif;
+          font-size: 15pt;
+          color: #999;
+        }
+      }
+    }
+
+    margin-bottom: 100px;
+  }
+}

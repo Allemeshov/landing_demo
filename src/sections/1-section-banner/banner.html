@@ -1,0 +1,125 @@
+<section class="banner">
+  <div class="nav-menu">
+    <div class="about burger-nav-el" onclick="scrollFromBurgerTo('about')">about</div>
+    <div class="service burger-nav-el" onclick="scrollFromBurgerTo('service')">service</div>
+    <div class="work burger-nav-el" onclick="scrollFromBurgerTo('work')">work</div>
+    <div class="blog burger-nav-el" onclick="scrollFromBurgerTo('blog')">blog</div>
+    <div class="contact burger-nav-el"  onclick="scrollFromBurgerTo('contact')">contact</div>
+    <div class="cart burger-nav-el"></div>
+    <div class="search burger-nav-el"></div>
+  </div>
+
+  <header>
+    <h1>MoGo</h1>
+    <nav>
+      <div class="about nav-el" onclick="scrollToAbout()">about</div>
+      <div class="service nav-el" onclick="scrollToService()">service</div>
+      <div class="work nav-el" onclick="scrollToWork()">work</div>
+      <div class="blog nav-el" onclick="scrollToBlog()">blog</div>
+      <div class="contact nav-el" onclick="scrollToContact()">contact</div>
+      <div class="cart nav-el">
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+      <div class="search nav-el">
+        <i class="fas fa-search"></i>
+      </div>
+    </nav>
+
+    <div class="burger-menu" onclick="toggleMenu()">
+      <div class="inner-line inner-line-1"></div>
+      <div class="inner-line inner-line-2"></div>
+    </div>
+  </header>
+
+  <div class="banner-slider swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <section class="creative"><h1>Creative Template</h1></section>
+        <section class="welcome-container">
+          <h1 class="welcome-text">
+            <span class="first-row">welcome</span>
+            <span class="second-row">to mogo</span>
+          </h1>
+        </section>
+        <section class="hor-line"></section>
+        <section class="learn-more"><button>learn more</button></section>
+      </div>
+      <div class="swiper-slide">
+        <section class="creative"><h1>Creative Template</h1></section>
+        <section class="welcome-container">
+          <h1 class="welcome-text">
+            <span class="first-row">welcome</span>
+            <span class="second-row">to mogo 2</span>
+          </h1>
+        </section>
+        <section class="hor-line"></section>
+        <section class="learn-more"><button>learn more</button></section>
+      </div>
+      <div class="swiper-slide">
+        <section class="creative"><h1>Creative Template</h1></section>
+        <section class="welcome-container">
+          <h1 class="welcome-text">
+            <span class="first-row">welcome</span>
+            <span class="second-row">to mogo 3</span>
+          </h1>
+        </section>
+        <section class="hor-line"></section>
+        <section class="learn-more"><button>learn more</button></section>
+      </div>
+      <div class="swiper-slide">
+        <section class="creative"><h1>Creative Template</h1></section>
+        <section class="welcome-container">
+          <h1 class="welcome-text">
+            <span class="first-row">welcome</span>
+            <span class="second-row">to mogo 4</span>
+          </h1>
+        </section>
+        <section class="hor-line"></section>
+        <section class="learn-more"><button>learn more</button></section>
+      </div>
+    </div>
+  </div>
+
+  <section class="banner-pagination">
+      <div class="grid-item">
+        <div class="slider-el current-page" onclick="movePageTo(1)">
+          <div class="line"></div>
+          <div class="text">
+            <p class="number">01</p>
+            <p class="desc">intro</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="grid-item">
+        <div class="slider-el" onclick="movePageTo(2)">
+          <div class="line"></div>
+          <div class="text">
+            <p class="number">02</p>
+            <p class="desc">work</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="grid-item">
+        <div class="slider-el" onclick="movePageTo(3)">
+          <div class="line"></div>
+          <div class="text">
+            <p class="number">03</p>
+            <p class="desc">about</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div class="slider-el" onclick="movePageTo(4)">
+        <div class="line"></div>
+        <div class="text">
+          <p class="number">04</p>
+          <p class="desc">contacts</p>
+        </div>
+      </div>
+      </div>
+    </section>
+  </section>
+</section>

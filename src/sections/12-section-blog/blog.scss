@@ -1,0 +1,136 @@
+@import "@shared/fonts.scss";
+@import "@shared/vars.scss";
+@import "@mixins/web-part.scss";
+
+.blog-section {
+  @include Web-part;
+  padding: 0 !important;
+
+  min-height: 850px;
+
+  header {
+    margin-top: 90px;
+    text-align: center;
+    h2 {
+      @include Kaushan-font;
+      font-size: 20pt;
+      color: #111;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+    h1 {
+      @include Montserrat-font(700);
+      font-size: 30pt;
+      text-transform: uppercase;
+      color: #111;
+    }
+    margin-bottom: 40px;
+  }
+
+  .hor-line-wrapper {
+    display: flex;
+    justify-content: center;
+    .hor-line {
+      width: 60px;
+      border-bottom: 3px solid #f38181;
+    }
+    margin-bottom: 45px;
+  }
+
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+    white-space: normal;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .post {
+      margin: 25px 15px;
+      // margin-right: 30px;
+      .picture {
+        position: relative;
+        cursor: pointer;
+
+        .post-picture {
+          max-width: 100%;
+          height: auto;
+        }
+        .date-container {
+          position: absolute;
+          bottom: 10px;
+          left: -10px;
+          background-color: #95e1d3;
+          height: 70px;
+          width: 60px;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+
+          .date {
+            @include Montserrat-font(700);
+            font-size: 27pt;
+            margin: 0;
+            color: white;
+            vertical-align: bottom;
+          }
+          .month {
+            margin-top: -15px;
+            margin: 0;
+            font-family: "Roboto", sans-serif;
+            font-size: 11pt;
+            font-style: italic;
+            color: white;
+          }
+        }
+      }
+      .title {
+        margin-top: 5px;
+        font-size: 14pt;
+        @include Montserrat-font(300);
+        color: #333;
+        cursor: pointer;
+      }
+      .desc {
+        margin-top: 10px;
+        color: #999;
+        font-size: 15pt;
+        font-family: "Roboto", sans-serif;
+        white-space: normal;
+        word-wrap: break-word;
+        max-width: 380px;
+      }
+      .hor-line {
+        margin: 22px 0;
+        width: 100%;
+        border: 1px solid #999;
+      }
+      .stats {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .fas {
+          color: #95e1d3;
+          margin-right: 6px;
+        }
+        p {
+          font-family: "Roboto", sans-serif;
+          font-size: 15pt;
+          font-style: italic;
+          color: #999;
+          margin-right: 19px;
+        }
+      }
+    }
+    .post-1 .post-picture {
+      content: url("@assets/img/blog-1.png");
+    }
+    .post-2 .post-picture {
+      content: url("@assets/img/blog-2.png");
+    }
+    .post-3 .post-picture {
+      content: url("@assets/img/blog-3.png");
+    }
+  }
+}

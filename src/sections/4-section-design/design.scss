@@ -1,0 +1,89 @@
+@import "@shared/fonts.scss";
+@import "@shared/vars.scss";
+@import "@mixins/web-part.scss";
+
+.design {
+  @include Web-part;
+  padding: 0 !important;
+
+  justify-content: flex-start !important;
+
+  background-image: url("@assets/img/landscape.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  header {
+    margin-top: 90px;
+    text-align: center;
+    h2 {
+      @include Kaushan-font;
+      font-size: 20pt;
+      color: #111;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+    h1 {
+      @include Montserrat-font(700);
+      font-size: 30pt;
+      text-transform: uppercase;
+      color: #111;
+    }
+    margin-bottom: 40px;
+  }
+
+  .hor-line-wrapper {
+    display: flex;
+    justify-content: center;
+    .hor-line {
+      width: 60px;
+      border-bottom: 3px solid #f38181;
+    }
+    margin-bottom: 45px;
+  }
+
+  .devices {
+    flex: 1;
+    flex-grow: 1;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .ipad {
+      opacity: 0;
+      position: relative;
+
+      img {
+        content: url("@assets/img/ipad.png");
+        max-width: 100%;
+        height: auto;
+      }
+
+      .iphone {
+        position: absolute;
+        top: 50%;
+        @include media(">=tablet") {
+          right: -5%;
+        }
+
+        @include media("<tablet") {
+          right: 0;
+        }
+
+        width: 40%;
+        height: auto;
+
+        bottom: -15%;
+        z-index: 10;
+
+        img {
+          content: url("@assets/img/iphone.png");
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
